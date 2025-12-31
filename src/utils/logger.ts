@@ -8,16 +8,22 @@ export enum LogLevel {
 
 class Logger {
   private level: LogLevel = LogLevel.INFO;
+  private silent: boolean = false;
 
   setLevel(level: LogLevel) {
     this.level = level;
   }
 
+  setSilent(silent: boolean) {
+    this.silent = silent;
+  }
+
   private log(level: LogLevel, message: string, ...args: unknown[]) {
+    if (this.silent) return;
     if (level >= this.level) {
       const timestamp = new Date().toISOString();
       const levelName = LogLevel[level];
-      console.log(`[${timestamp}] [${levelName}] ${message}`, ...args);
+      console.error(`[${timestamp}] [${levelName}] ${message}`, ...args);
     }
   }
 

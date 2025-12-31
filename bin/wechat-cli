@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# WeChat Official Account CLI wrapper
+# Usage: wechat-cli <command> [options]
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CLI_JS="$SCRIPT_DIR/../dist/src/cli.js"
+
+if [ ! -f "$CLI_JS" ]; then
+    echo '{"ok":false,"error":{"code":"NOT_BUILT","message":"CLI not built. Run: cd skills/wechat-article-publisher/scripts/wechat-cli && npm run build"}}' >&2
+    exit 1
+fi
+
+exec node "$CLI_JS" "$@" 2>/dev/null
