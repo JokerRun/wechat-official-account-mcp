@@ -1,5 +1,5 @@
 {
-  "name": "wechat-official-account-mcp",
+  "name": "@jokerrun/wechat-cli",
   "version": "1.1.0",
   "type": "module",
   "description": "微信公众号 MCP 服务 - 为 AI 应用提供微信公众号 API 集成",
@@ -9,12 +9,13 @@
     "ai",
     "api",
     "typescript",
-    "official-account"
+    "official-account",
+    "wechat-cli"
   ],
-  "author": "xwang152-jack <xwang152@163.com>",
+  "author": "JokerRun <xwang152@163.com>",
   "license": "MIT",
   "bin": {
-    "wechat-mcp": "./dist/src/cli.js"
+    "wechat-cli": "dist/src/cli.js"
   },
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
@@ -28,11 +29,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xwang152-jack/wechat-official-account-mcp.git"
+    "url": "git+https://github.com/JokerRun/wechat-official-account-mcp.git"
   },
-  "homepage": "https://github.com/xwang152-jack/wechat-official-account-mcp#readme",
+  "homepage": "https://github.com/JokerRun/wechat-official-account-mcp#readme",
   "bugs": {
-    "url": "https://github.com/xwang152-jack/wechat-official-account-mcp/issues"
+    "url": "https://github.com/JokerRun/wechat-official-account-mcp/issues"
   },
   "scripts": {
     "build": "npm run clean && tsc",
